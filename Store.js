@@ -1,5 +1,5 @@
-import { React } from 'react';
-import { ReactDOM } from 'react-dom';
+import React  from 'react';
+import  ReactDOM  from 'react-dom';
 
 const createStore = (reducer) => {
     let state;
@@ -22,13 +22,6 @@ const createStore = (reducer) => {
 
     return {getState, dispatch, subscribe};
 }
-
-const store = createStore(counter);
-
-console.log(store.getState());
-
-store.dispatch({type: 'INCREMENT'});
-console.log(store.getState());
 
 const Counter = ({value}) => (
     <div>
@@ -55,6 +48,13 @@ const render = () => {
         document.getElementById('root')
     )
 };
+
+const store = createStore(Counter);
+console.log(store.getState());
+
+store.dispatch({type: 'INCREMENT'});
+console.log(store.getState());
+
 
 store.subscribe(render);
 render();

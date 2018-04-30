@@ -1,3 +1,5 @@
+import expect from 'expect';
+
 const counter = (state = 0, action) =>  {
     if (typeof state === undefined) {
         return 0;
